@@ -1,0 +1,92 @@
+<html>
+<head>
+<link href="css/easyVisit.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/llqrcode.js"></script>
+<script type="text/javascript" src="js/webqr.js"></script>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+<script type="text/javascript">
+
+	function next()
+	{
+		var who = $(this).prop("alt");
+		$("#who").text(who);
+		
+		$("#screen-1").hide();
+		$("#screen-2").show();
+	}
+
+</script>
+
+</head>
+
+<body>
+	<canvas id="qr-canvas"></canvas>
+<div id="screens">
+	<div id="screen-1">
+		<div class="title">Who Are You Visiting?</div>
+		<div class="img-block">
+			<img class="visitee" src="img/Archie.jpg" id="waymon" alt="Archie"></img>
+			<img class="visitee" src="img/BuzzLightYear.jpg" id="joconnell" alt="Buzz Lightyear"></img>
+			<img class="visitee" src="img/CapnCrunch-REV.jpg" id="bsmith" alt="CAPT Crunch"></img>
+			<img class="visitee" src="img/ElmerFudd.jpg" id="lkayne" alt="Elmer Fudd"></img>
+			<img class="visitee" src="img/FozzieBear.jpg" id="mgolson" alt="Fozzie Bear"></img>
+			<img class="visitee" src="img/FatAlbert.jpg" id="kgarrison" alt="Fat Albert"></img>
+			<img class="visitee" src="img/WileECoyote.jpg" id="howardmall" alt="Wile E. Coyote"></img>
+			<img class="visitee" src="img/Shaggy.jpg" id="staber" alt="Shaggy"></img>
+		</div>
+		<div class="visitee-form">
+		<div class="other">Don't See the Person You are Visiting?</div>
+		<div class="other-sub">Type Their Name Below and Press Next</div>
+		<div contenteditable="true" id="visitee"></div>
+		<div class="next-button" onclick="next();">NEXT</div>
+		</div>
+	</div> <!-- id="screen-1" -->
+	<div id="screen-2">
+		<div class="title">Tell Us About Your Visit</div>
+		<div class="row">
+			<div class="attribute">Person Visiting</div>
+			<div class="value" contenteditable="true" id="who"></div>
+		</div>
+		<div class="row">
+			<div class="attribute">Name</div>
+			<div class="value" contenteditable="true" id="name"></div>
+		</div>
+		<div class="row">
+			<div class="attribute">Organization</div>
+			<div class="value" contenteditable="true" id="where"></div>
+		</div>
+		<div class="row">
+			<div class="attribute">Purpose of Visit</div>
+			<div class="value" contenteditable="true" id="why"></div>
+		</div>
+		<div class="row">
+			<div class="attribute">Issued Badge #</div>
+			<div id="result" class="value">
+			<button class="selector" id="webcamimg" onclick="scan();" align="left" >SCAN</button>
+		</div>
+		<div id="submit-button">
+			SUBMIT
+		</div>
+	</div>
+</div> <!-- id="screens" -->
+
+	<div id="outdiv"></div>
+
+</body>
+<script>
+	load();
+
+	$(".visitee").click(next);
+
+	$("#submit-button").click(function() {
+		$(".value").empty();
+		$("#screen-2").hide();
+		$("#screen-1").show();
+		load();
+	});
+</script>
+
+</html>
+
