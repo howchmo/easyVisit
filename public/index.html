@@ -1,0 +1,168 @@
+<html>
+<head>
+<link href="css/easyVisit.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/llqrcode.js"></script>
+<script type="text/javascript" src="js/webqr.js"></script>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/easyVisit.js"></script>
+
+<script type="text/javascript">
+
+	function next()
+	{
+		var who = $(this).prop("alt");
+		if( who == undefined )
+		{
+			$("#who").text($("#visitee").text());
+			$("#visitee").empty();
+		}
+		else
+		{
+			$("#who").text(who);
+		}
+
+		$("#screen-1").hide();
+		$("#screen-2").show();
+		timeoutId = setTimeout(done, 30000);
+	}
+
+
+</script>
+
+</head>
+
+<body>
+	<canvas id="qr-canvas"></canvas>
+<div id="screens">
+	<div id="screen-1">
+		<div class="title">Who Are You Visiting?</div>
+		<div class="img-block">
+			<img class="visitee" src="img/Archie.jpg" id="1" alt="Archie"></img>
+			<img class="visitee" src="img/BuzzLightyear.jpg" id="2" alt="Buzz Lightyear"></img>
+			<img class="visitee" src="img/CapnCrunch-REV.jpg" id="3" alt="CAPT Crunch"></img>
+			<img class="visitee" src="img/ElmerFudd.jpg" id="4" alt="Elmer Fudd"></img>
+			<img class="visitee" src="img/FozzieBear.jpg" id="5" alt="Fozzie Bear"></img>
+			<img class="visitee" src="img/FatAlbert.jpg" id="6" alt="Fat Albert"></img>
+			<img class="visitee" src="img/WileECoyote.jpg" id="7" alt="Wile E. Coyote"></img>
+			<img class="visitee" src="img/Shaggy.jpg" id="8" alt="Shaggy"></img>
+		</div>
+		<div class="visitee-form">
+			<div class="other">Don't See the Person You are Visiting?</div>
+			<div class="other-sub">Type Their Name Below and Press Next</div>
+			<div contenteditable="true" id="visitee"></div>
+			<br/>
+			<center>
+				<div id="next-button" class="button" onclick="next();">
+					<p>NEXT</p>
+				</div>
+			</center>
+		</div>
+	</div> <!-- id="screen-1" -->
+
+	<div id="screen-2">
+		<div class="title">Tell Us About Your Visit</div>
+		<div id="visit-form">
+			<div class="row">
+				<div class="attribute">The Person You Are Visiting</div>
+				<div class="value" contenteditable="true" id="who"></div>
+			</div>
+			<div class="row">
+				<div class="attribute">Your Name</div>
+				<div class="value" contenteditable="true" id="name"></div>
+			</div>
+			<div class="row">
+				<div class="attribute">Your Company or Organization</div>
+				<div class="value" contenteditable="true" id="where"></div>
+			</div>
+			<div class="row">
+				<div class="attribute">The Purpose of Your Visit</div>
+				<div class="value" contenteditable="true" id="why"></div>
+			</div>
+		</div>
+<!--
+		<div class="row">
+			<div class="attribute">Issued Badge #</div>
+			<div id="result" class="value">
+			<button class="selector" id="webcamimg" onclick="scan();" align="left" >SCAN</button>
+		</div>
+-->
+		<br/>
+		<center>
+
+			<div id="submit-button" class="button">
+				<p>SUBMIT</p>
+			</div>
+		</center>
+	</div> <!-- id="screen-2" -->
+
+	<div id="screen-3">
+		<div class="title">Get a Visitor's Badge<br/>There is a QR Code on the Back<br/>Scan it by holding it up to the camera</div>
+		<div class="animation"></div>
+		<div class="attribute">Your Visitor Badge # is</div>
+		<div id="result" class="value"></div>
+		<br/>
+		<div id="scanned">
+			<br/>
+			<div class="title">Great Job!</div>
+			<div>
+				<div id="message">
+					Clip the badge to your clothes.<br/>
+					When your visit is done,<br/>
+					scan the QR Code again<br/>
+					and return your badge to the front desk<br/>
+				</div>
+				<div>
+					Thanks for visiting ECS!<br/>
+					And, thanks for using <i>easyVisit</i>!
+				</div>
+			</div>
+			<br/>
+			<center>
+
+				<div id="done-button" class="button">
+					<p>DONE</p>
+				</div>
+			</center>
+		</div>
+	</div> <!-- id="screen-3" -->
+</div> <!-- id="screens" -->
+
+	<div id="outdiv"></div>
+
+</body>
+<script>
+	var timeoutId = null;
+	function done()
+	{
+		$(".value").empty();
+		$("#screen-2").hide();
+		$("#screen-3").hide();
+		$("#scanned").hide();
+		$("#screen-1").show();
+		clearTimeout(timeoutId);
+	}
+
+	load();
+
+	$(".visitee").click(next);
+
+	$("#submit-button").click(function()
+	{
+		$("#screen-2").hide();
+		$("#screen-3").show();
+		load();
+		timeoutId = setTimeout(done, 20000);
+	});
+
+	$("#done-button").click(done);
+
+	function scanned()
+	{
+		$("#scanned").show();
+		timeoutId = setTimeout(done, 10000);
+	}
+</script>
+
+</html>
+

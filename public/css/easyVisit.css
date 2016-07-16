@@ -1,0 +1,175 @@
+body {
+	width:100%;
+	text-align:center;
+	overflow:hidden;
+	color:white;
+	text-shadow: 2px 2px black;
+	font-size:22pt;
+}
+
+#screens {
+	float:left;
+}
+
+#qr-canvas{
+	border:solid;
+	border-width: 1px 1px 1px 1px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	z-index:-1;
+}
+
+#v {
+	width:100%;
+}
+
+#outdiv
+{
+	position:fixed;
+	left:0px;
+	top:0px;
+	width:100%;
+	z-index:-1;
+}
+
+.row {
+	float:left;
+	width:100%;
+	padding:5px;
+	text-align:center;
+	background-color:gray;
+	opacity:0.6;
+	margin: 0 auto;
+}
+
+.attribute {
+	font-weight:bold;
+	text-align:right;
+	width:30%;
+	float:left;
+	padding:5px;
+	font-size:24pt;
+}
+
+.value
+{
+	border:solid;
+	border-width: 1px 1px 1px 1px;
+	padding:5px;
+	width:50%;
+	float:left;
+	height:36px;
+	text-align:left;
+	font-size:22pt;
+	font-style:italic;
+}
+
+.selector{
+    margin:0;
+    padding:0;
+    cursor:pointer;
+    margin-bottom:-5px;
+	font-size:24pt;
+}
+
+.visitee {
+	height:200px;
+	background-color:blue;
+	margin:60px;
+}
+
+#screen-1 {
+	position:absolute;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+}
+
+#screen-2 {
+	position:absolute;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+	display:none;
+}
+
+#screen-3 {
+	position:absolute;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+	display:none;
+}
+
+#screen-4 {
+	position:absolute;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+	display:none;
+}
+
+#other {
+	text-align:center;
+}
+
+.title {
+	font-size:24pt;
+	font-weight:bold;
+}
+
+.other {
+	font-size:24pt;
+	font-weight:bold;
+}
+
+.other-sub {
+	font-size:18pt;
+}
+
+#visitee {
+	margin-left: auto;
+	margin-right: auto;
+	border:solid;
+	border-width: 1px 1px 1px 1px;
+	padding:5px;
+	width:30%;
+	height:32px;
+	text-center:left;
+	font-size:24pt;
+}
+
+.button {
+	background-color:white;
+	width:300px;
+	height:100px;
+	text-align:center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:5px;
+	display: table-cell;
+}
+
+.button > p {
+	text-align:center;
+	font-weight:bold;
+	color:black;
+	font-size:18pt;
+	display: table-cell;
+	vertical-align:middle;
+	width:300px;
+	height:100px;
+	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
+	text-shadow:none;
+}
+
+#result {
+}
+
+#scanned {
+	display:none;	
+}
