@@ -5,13 +5,16 @@
 <script type="text/javascript" src="js/llqrcode.js"></script>
 <script type="text/javascript" src="js/webqr.js"></script>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
-<script type="text/javascript" src="js/easyVisit.js"></script>
+<script type="text/javascript" src="js/easyvisit.js"></script>
 
 <script type="text/javascript">
-
+	var timeoutId;
+	var visitee = -1;
 	function next()
 	{
+		clearTimeout(timeoutId);
 		var who = $(this).prop("alt");
+		visitee = parseInt($(this).prop("id"));
 		if( who == undefined )
 		{
 			$("#who").text($("#visitee").text());
@@ -132,15 +135,14 @@
 
 </body>
 <script>
-	var timeoutId = null;
 	function done()
 	{
+		clearTimeout(timeoutId);
 		$(".value").empty();
 		$("#screen-2").hide();
 		$("#screen-3").hide();
 		$("#scanned").hide();
 		$("#screen-1").show();
-		clearTimeout(timeoutId);
 	}
 
 	load();
@@ -149,6 +151,7 @@
 
 	$("#submit-button").click(function()
 	{
+		clearTimeout(timeoutId);
 		$("#screen-2").hide();
 		$("#screen-3").show();
 		load();
@@ -159,6 +162,12 @@
 
 	function scanned()
 	{
+		clearTimeout(timeoutId);
+		var visitor = $("#name").text();
+		var organization = $("#where").text();
+		var purpose = $("#why").text();
+		var badge = $("#result").text();
+		write( visitee, visitor, organization, 'usa', purpose, badge );
 		$("#scanned").show();
 		timeoutId = setTimeout(done, 10000);
 	}

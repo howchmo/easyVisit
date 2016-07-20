@@ -1,6 +1,6 @@
 {
-  "name": "easyVisit",
-  "version": "0.0.0",
+  "name": "easyvisit",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -12,6 +12,20 @@
     "express": "~4.13.4",
     "jade": "~1.11.0",
     "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0"
-  }
+    "serve-favicon": "~2.3.0",
+    "pg-promise": "5.2.0"
+  },
+  "description": "Most corporations now require you to sign in and obtain a visitor's badge.  This application allows for visitors to your organization to use a computer interface to:",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/howchmo/easyVisit.git"
+  },
+  "author": "Howard Mall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/howchmo/easyVisit/issues"
+  },
+  "homepage": "https://github.com/howchmo/easyVisit#readme"
 }
