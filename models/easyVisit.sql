@@ -202,19 +202,19 @@ COPY visitees (visitee, name, imgurl, frontpage) FROM stdin;
 -- Name: visitees_visitee_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('visitees_visitee_seq', 0, true);
+SELECT pg_catalog.setval('visitees_visitee_seq', 1, true);
 
 --
 -- Name: visitors_visitor_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('visitors_visitor_seq', 0, true);
+SELECT pg_catalog.setval('visitors_visitor_seq', 1, true);
 
 --
 -- Name: visits_visit_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('visits_visit_seq', 0, true);
+SELECT pg_catalog.setval('visits_visit_seq', 1, true);
 
 
 --

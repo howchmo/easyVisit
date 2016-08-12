@@ -1,14 +1,14 @@
 body {
 	width:100%;
+}
+
+#screens {
+	float:left;
 	text-align:center;
 	overflow:hidden;
 	color:white;
 	text-shadow: 2px 2px black;
 	font-size:22pt;
-}
-
-#screens {
-	float:left;
 }
 
 #qr-canvas{
@@ -173,3 +173,16 @@ body {
 #scanned {
 	display:none;	
 }
+
+.ui-dialog {
+	margin: auto !important; 
+	width:800px !important;
+	font-size:22pt !important;
+	top:50% !important;
+	transform:translate(-50%,-50%);
+}
+
+.ui-dialog-content {
+	text-align:center;
+}
+

@@ -111,6 +111,8 @@ function htmlEntities(str) {
 
 function read(a)
 {
+		console.log("scanned");
+		$("#badge-returned-dialog").dialog("open");
     var html="";
     if(a.indexOf("http://") === 0 || a.indexOf("https://") === 0)
         html+="<a target='_blank' href='"+a+"'>"+a+"</a><br>";
@@ -121,6 +123,7 @@ function read(a)
 
 		//write();
 	scanned();
+	load();
 }
 
 function isCanvasSupported(){

@@ -6,14 +6,16 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "body-parser": "~1.15.1",
+    "body-parser": "^1.15.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
-    "express": "~4.13.4",
+    "express": "^4.13.4",
     "jade": "~1.11.0",
+    "jquery": "^3.1.0",
+    "jquery-ui": "^1.12.0",
     "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0",
-    "pg-promise": "5.2.0"
+    "pg-promise": "^5.2.0",
+    "serve-favicon": "~2.3.0"
   },
   "description": "Most corporations now require you to sign in and obtain a visitor's badge.  This application allows for visitors to your organization to use a computer interface to:",
   "main": "app.js",

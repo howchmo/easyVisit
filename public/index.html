@@ -1,10 +1,12 @@
 <html>
 <head>
+<link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
 <link href="css/easyVisit.css" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="js/llqrcode.js"></script>
 <script type="text/javascript" src="js/webqr.js"></script>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
 <script type="text/javascript" src="js/easyvisit.js"></script>
 
 <script type="text/javascript">
@@ -38,6 +40,7 @@
 <body>
 	<canvas id="qr-canvas"></canvas>
 <div id="screens">
+	<div id="badge-returned-dialog" title="Badge Returned!"><br/>Thanks!<br/>Have an Inspired Day!</br></div>
 	<div id="screen-1">
 		<div class="title">Who Are You Visiting?</div>
 		<div class="img-block">
@@ -78,6 +81,7 @@
 				<div class="attribute">Your Company or Organization</div>
 				<div class="value" contenteditable="true" id="where"></div>
 			</div>
+
 			<div class="row">
 				<div class="attribute">The Purpose of Your Visit</div>
 				<div class="value" contenteditable="true" id="why"></div>
@@ -135,6 +139,19 @@
 
 </body>
 <script>
+	load();
+
+	$("#badge-returned-dialog").dialog(
+	{
+		modal: true,
+		draggable: false,
+		resizeable: false,
+		autoopen: false,
+		hide: { effect: "explode", duration: 1000 }
+	});
+	$("#badge-returned-dialog").dialog("close");
+
+
 	function done()
 	{
 		clearTimeout(timeoutId);
@@ -145,7 +162,6 @@
 		$("#screen-1").show();
 	}
 
-	load();
 
 	$(".visitee").click(next);
 
